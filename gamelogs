@@ -1,0 +1,10 @@
+library(mysportsfeedsR)
+library(httr)
+
+.MySportsFeedsEnv <- new.env()
+.MySportsFeedsEnv$data <- list( v1_0_username <- "USERNAME", v1_0_password <- "PASSWORD")
+authenticate_v1_0('USERNAME', 'PASSWORD')
+
+authenticate_v1_0('chiga','abc123')
+
+gamelogs <- GET("https://api.mysportsfeeds.com/v1.1/pull/nba/2016-2017-regular/team_gamelogs.csv?team=gsw")
